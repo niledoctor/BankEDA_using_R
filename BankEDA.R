@@ -119,3 +119,12 @@ ggplot(data, aes(y = Credit_Limit)) +
   labs(title = "Boxplot of Credit_Limit",
        y = "limit") +
   theme_minimal()
+
+#ploting a bar chart of avg credit limit to income category
+ggplot(data, aes(x = Income_Category, y = Credit_Limit)) +
+  stat_summary(fun = mean, geom = "bar", fill = "skyblue", color = "black") +
+  labs(title = "Average Credit Limit by Income Category",
+       x = "Income Category",
+       y = "Average Credit Limit") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
